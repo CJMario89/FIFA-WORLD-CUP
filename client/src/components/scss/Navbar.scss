@@ -1,0 +1,69 @@
+.Navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    background-color: #851A34;
+    white-space: nowrap;
+    z-index: 100;
+
+    .NavbarLeft{
+        display: flex;
+        flex-direction: row;
+
+        .NavbarOption{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: auto;
+            color: #FFFBFF;
+            font-size: 1.2vw;
+            font-weight: 100;
+            margin-left: 4vw;
+        
+            div{
+                margin-left: 1.5vw;
+                margin-right: 1.5vw;
+                cursor: pointer;
+
+                &:hover{
+                    color: #EEC73C !important;
+                }
+            }
+        }
+    }
+
+    .NavbarRight{
+        display: flex;
+        flex-direction: row;
+        margin-right: 2vw;
+
+        .NavbarTelegram ,.NavbarConnectWallet{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            border-radius: 1.1vw;
+            padding: 0.8vw 1.2vw;
+            font-size: 0.9vw;
+            font-weight: 500;
+            color: #581026;
+            background-color: #F1E3E6; 
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(0.95);
+            }
+        }
+        .NavbarTelegram{
+            margin-right: 1vw;
+        }
+    }    
+}
+

@@ -1,0 +1,41 @@
+.Country{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 20%;
+    width: 80%;
+
+    &:hover .CountryName{
+        color: #EEC73C !important;
+    }
+
+    
+
+    .CountryImg{
+        display: block;
+        position: relative;
+        width: 45%;
+        height: auto;
+
+        img{
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .CountryName{
+        display: block;
+        position: relative;
+        margin-left: 5%;
+        width: 53%;
+        font-size: 1.1vw;
+        font-family: 'Inter-Bold';
+        font-weight: 900;
+        color: white;
+        letter-spacing: 1px;
+    }
+}

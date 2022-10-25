@@ -1,0 +1,81 @@
+.FrontCover{
+    position: relative;
+    display: block;
+    height: auto;
+    width: 100%;
+    margin-top: 116px;
+    padding-top: 69%;
+    background-color: #581026;
+    
+    
+    img{
+        display: block;
+        position: absolute;
+        left: 0%;
+        top: 1%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    .FrontCoverMask{
+        position: absolute;
+        display: block;
+        left: 0px;
+        top: 1%;
+        height: 95.83%;
+        width: 100%;
+        backdrop-filter: brightness(0.9);
+        background: rgba(100, 25, 50, 0.05)
+    }
+
+
+    .FrontCoverTitle{
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 6.35vw;
+        color: #FFFEFB;
+        background: rgba(88, 16, 38, 0.6);
+        padding: 0.1vw;
+        padding-left: 4.3vw;
+        padding-right: 2vw;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 4.3vw;
+        font-weight: 900;
+        font-family: "Inter-Bold";
+        backdrop-filter: blur(1px);
+    }
+
+    .FrontCoverButton{
+        display: block;
+        position: absolute;
+        left: 5vw;
+        top: 53vw;
+        border: 0.3vw solid #581026;
+        border-radius: 1vw;
+        padding: 1.8vw 0.8vw;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(0.95);
+
+            span{
+                color: #EEC73C !important;
+            }
+        }
+        
+        span{
+            padding: 1.3vw;
+            background-color: #581026;
+            font-family: "Inter-Bold";
+            border-radius: 1vw;
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 1.7vw;
+        }
+    }
+}
+
+

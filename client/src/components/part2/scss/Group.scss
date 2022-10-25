@@ -1,0 +1,42 @@
+.Group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 22%;
+    height: 45%;
+    background: rgba(88, 16, 38, 0.85);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2vw;
+
+
+    .GroupTitle{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: calc(100% - 0.6vw);
+        padding: 0.6vw;
+        margin-bottom: 0.6vw;
+        font-size: 1.4vw;
+        letter-spacing: 1px;
+        font-family: 'Inter-Bold';
+        font-weight: 900;
+        color: #EEC73C;
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 11%;
+            width: 78%;
+            height: 1px;
+            background-color: #F1E3E6;
+            opacity: 0.5;
+        }
+    }
+
+}
