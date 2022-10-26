@@ -9,6 +9,7 @@
     background: rgba(88, 16, 38, 0.85);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2vw;
+    opacity: 0;
 
     &:hover{
         transform: scale(1.05);
@@ -44,4 +45,17 @@
         }
     }
 
+}
+
+.ShowGroup{
+    animation: GroupAnimation 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes GroupAnimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

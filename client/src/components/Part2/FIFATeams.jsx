@@ -2,6 +2,7 @@ import './scss/FIFATeams.scss'
 import React from 'react'
 import Group from './Group'
 import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
 
 const FIFATeams = () => {
 
@@ -41,6 +42,21 @@ const FIFATeams = () => {
         }
     ]
 
+
+    useEffect(()=>{
+        window.addEventListener("scroll", ()=>{
+            if(document.querySelector(".GroupContainer").getBoundingClientRect().top < 650){
+                let i = 0;
+                document.querySelectorAll(".Group").forEach((dom)=>{
+                    setTimeout(()=>{
+                        dom.classList.add("ShowGroup");
+                    }, i * 100)
+                    i++;
+                })
+            }
+            
+        })
+    }, [])
 
   return (
     <div className='FIFATeams'>

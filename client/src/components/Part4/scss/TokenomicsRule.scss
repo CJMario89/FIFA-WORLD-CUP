@@ -8,12 +8,15 @@
     height: 42%;
     margin-top: 6%;
     background: rgba(133, 26, 52, 0.71);
+    opacity: 0;
+    transition: all 1s ease-in-out;
 
     .TokenomicsRuleImage{
         display: block;
         position: relative;
         width: 40%;
         margin-top: 8%;
+        filter: drop-shadow(-1px 14px 5px rgba(30, 30, 30, 0.5));
     }
 
     .TokenomicsRuleTitle{
@@ -38,4 +41,9 @@
         text-align: center;
         color: #FFFBFF;
     }
+}
+
+
+.ShowTokenomicsRule{
+    opacity: 1;
 }

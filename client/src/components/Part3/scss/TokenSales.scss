@@ -36,6 +36,7 @@
                 font-weight: 900;
                 color: #FFFBFF;
                 letter-spacing: 2px;
+                text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
             }
             .TokenSalesDescriptionContent{
                 display: block;
@@ -99,6 +100,11 @@
                     transform: translate(-50%, -50%);
                     width: 60%;
                 }
+
+                .SoccerImg{
+                    animation: SoccerImg 3s ease-in-out 0s infinite normal forwards;
+                    filter: drop-shadow(-1px 27px 30px rgba(30, 30, 30, 0.5));
+                }
             }
         }
 
@@ -152,6 +158,10 @@
                 color: #581026;
                 border-radius: 1vw;
                 cursor: pointer;
+
+                &:hover{
+                    transform: scale(1.05);
+                }
             }
 
             .TokenSalesAPIFreemint{
@@ -172,6 +182,10 @@
                     padding: 1.6vw 3.2vw;
                     background-color: #1EA912;
                     border-radius: 1vw;
+                }
+
+                &:hover{
+                    transform: scale(1.05);
                 }
             }
 
@@ -250,6 +264,10 @@
                     font-weight: 700;
                     margin-top: 5%;
                     cursor: pointer;
+
+                    &:hover{
+                        transform: scale(1.05);
+                    }
                 }
             }
         }
@@ -295,5 +313,17 @@
             }
         }
 
+    }
+}
+
+@keyframes SoccerImg{
+    0%{
+        transform: translate(-50%, -50%);
+    }
+    50%{
+        transform: translate(-50%, -55%);
+    }
+    100%{
+        transform: translate(-50%, -50%);
     }
 }

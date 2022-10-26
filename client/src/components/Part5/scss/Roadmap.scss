@@ -28,6 +28,7 @@
         font-weight: 900;
         color: #FFFBFF;
         letter-spacing: 1px;
+        text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     }
 
     .Phases{
@@ -35,9 +36,6 @@
         position: absolute;
         width: 34.7%;
         height: auto;
-        padding-bottom: 3vw;
-        border-radius: 1.2vw;
-        background: #851A34;
     }
 
     .phase1{
@@ -56,12 +54,180 @@
         display: block;
         position: absolute;
         left: 17vw;
-        top: 63.5vw;
+        top: 66vw;
     }
     .phase4{
         display: block;
         position: absolute;
         left: 60vw;
-        top: 63.5vw;
+        top: 66vw;
+    }
+
+    .Dashed{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 7vw;
+        height: 5px;
+        background: linear-gradient(to right,transparent 0% , 
+        transparent 10%, rgba(241, 227, 230, 0.75) 10%,
+        rgba(241, 227, 230, 0.75) 20%, transparent 20%,
+        transparent 30%, rgba(241, 227, 230, 0.75) 30%,
+        rgba(241, 227, 230, 0.75) 40%, transparent 40%,
+        transparent 50%, rgba(241, 227, 230, 0.75) 50%,
+        rgba(241, 227, 230, 0.75) 60%, transparent 60%,
+        transparent 70%, rgba(241, 227, 230, 0.75) 70%,
+        rgba(241, 227, 230, 0.75) 80%, transparent 80%,
+        transparent 90%, rgba(241, 227, 230, 0.75) 90%,
+        rgba(241, 227, 230, 0.75) 100%, transparent 100%
+        );
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        
+    }
+
+    .Dashed12{
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 43%;
+    }
+
+    .Dashed34{
+        display: block;
+        position: absolute;
+        top: 85%;
+        left: 52.2%;
+    }
+
+    .Dashed23_1{
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 86%;
+    }
+    .Dashed23_2{
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 93%;
+        transform: rotate(90deg);
+    }
+    .Dashed23_3{
+        display: block;
+        position: absolute;
+        top: 42%;
+        left: 93%;
+        transform: rotate(90deg);
+    }
+    .Dashed23_4{
+        display: block;
+        position: absolute;
+        top: 49%;
+        left: 93%;
+        transform: rotate(90deg);
+    }
+    .Dashed23_5{
+        display: block;
+        position: absolute;
+        top: 52%;
+        left: 93%;
+        transform: rotate(90deg);
+    }
+    .Dashed23_6{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 86%;
+    }
+    .Dashed23_7{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 79%;
+    }
+    .Dashed23_8{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 72%;
+    }
+    .Dashed23_9{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 65%;
+    }
+    .Dashed23_10{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 58%;
+    }
+    .Dashed23_11{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 51%;
+    }
+    .Dashed23_12{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 44%;
+    }
+    .Dashed23_13{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 37%;
+    }
+    .Dashed23_14{
+        display: block;
+        position: absolute;
+        top: 59%;
+        left: 30%;
+    }
+    .Dashed23_15{
+        display: block;
+        position: absolute;
+        top: 58.3%;
+        left: 30%;
+        transform: rotate(90deg);
+    }
+}
+
+.DashedAnimation{
+    animation: DashedAnimation 1s ease-in-out 0s infinite normal forwards;
+    opacity: 1 !important;
+}
+@keyframes DashedAnimation{
+    0%{
+        background: linear-gradient(to right,transparent 0% , 
+        transparent 10%, rgba(241, 227, 230, 0.75) 10%,
+        rgba(241, 227, 230, 0.75) 20%, transparent 20%,
+        transparent 30%, rgba(241, 227, 230, 0.75) 30%,
+        rgba(241, 227, 230, 0.75) 40%, transparent 40%,
+        transparent 50%, rgba(241, 227, 230, 0.75) 50%,
+        rgba(241, 227, 230, 0.75) 60%, transparent 60%,
+        transparent 70%, rgba(241, 227, 230, 0.75) 70%,
+        rgba(241, 227, 230, 0.75) 80%, transparent 80%,
+        transparent 90%, rgba(241, 227, 230, 0.75) 90%,
+        rgba(241, 227, 230, 0.75) 100%, transparent 100%
+        );
+    }
+    100%{
+        background: linear-gradient(to right,transparent 0% , 
+        transparent 10%, rgba(241, 227, 230, 1) 10%,
+        rgba(241, 227, 230, 1) 20%, transparent 20%,
+        transparent 30%, rgba(241, 227, 230, 1) 30%,
+        rgba(241, 227, 230, 1) 40%, transparent 40%,
+        transparent 50%, rgba(241, 227, 230, 1) 50%,
+        rgba(241, 227, 230, 1) 60%, transparent 60%,
+        transparent 70%, rgba(241, 227, 230, 1) 70%,
+        rgba(241, 227, 230, 1) 80%, transparent 80%,
+        transparent 90%, rgba(241, 227, 230, 1) 90%,
+        rgba(241, 227, 230, 1) 100%, transparent 100%
+        );
     }
 }

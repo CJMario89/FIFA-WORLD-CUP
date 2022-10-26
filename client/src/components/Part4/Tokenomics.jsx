@@ -1,5 +1,5 @@
 import './scss/Tokenomics.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import TokenomicsRule from './TokenomicsRule';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -38,6 +38,21 @@ const Rules = [
         'image': require(`../../assets/images/part3/Rule6.png`)
     },
 ];
+
+
+useEffect(()=>{
+    window.addEventListener("scroll", ()=>{
+        if(document.querySelector(".TokenomicsContainer").getBoundingClientRect().top < 550){
+            let i = 0;
+            document.querySelectorAll(".TokenomicsRule").forEach((dom)=>{
+                setTimeout(()=>{
+                    dom.classList.add("ShowTokenomicsRule");
+                }, i * 600)
+                i++;
+            })
+        }  
+    })
+}, [])
 
   return (
     <div className='Tokenomics'>

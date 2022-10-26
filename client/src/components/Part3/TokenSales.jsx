@@ -1,5 +1,5 @@
 import './scss/TokenSales.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import soccer from '../../assets/images/part2/soccer.png'
 import FIFA from '../../assets/images/part2/FIFA.png'
 import { v4 as uuidv4 } from 'uuid'
@@ -12,11 +12,15 @@ const TokenSales = () => {
         const img = require(`../../assets/images/part2/part2_${i}.png`);
         providers.push(img);
     }
+
+
+   
+
   return (
     <div className='TokenSales'>
         <div className='TokenSalesContainer'>
             <div className='TokenSalesDescription'>
-                <div className='TokenSalesDescriptionTitle'>
+                <div className='TokenSalesDescriptionTitle' id='TokenSalesDescriptionTitle'>
                     FIFA WORLD CUP 2022’S<br/>
                     <span style={{color: '#EEC73C'}}>TOKEN SALE</span>
                 </div>
@@ -34,13 +38,13 @@ const TokenSales = () => {
                 </div>
                 <div className='TokenSalesDescriptionImg'>
                     <img src={FIFA} alt=""></img>
-                    <img src={soccer} alt=""></img>
+                    <img src={soccer} className="SoccerImg" alt=""></img>
                 </div>
             </div>
             <div className='TokenSalesAPI'>
                 <div className='TokenSalesAPIDescription'>
                     Buy FIFFA<br/>
-                    Buy 0.01 BNB = 1000,000 FIFA<br/>
+                    Buy 0.01 BNB = 1,000,000 FIFA<br/>
                     Buy 1 BNB = 100,000,000 FIFA<br/>
                     Buy 10 BNB = 1,000,000,000 FIFA
                 </div>
