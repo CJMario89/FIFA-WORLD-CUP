@@ -24,7 +24,9 @@ const Footer = () => {
         </div>
 
         <div className='FooterRight'>
-            
+            <div className='FooterCopyright'>
+                © FIFA World Cup Qatar 2022. All Rights Reserved.
+            </div>
         </div>
         
     </div>
