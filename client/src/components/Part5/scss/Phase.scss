@@ -1,0 +1,42 @@
+.Phase{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .PhaseTitle{
+        display: block;
+        position: relative;
+        color: #EEC73C;
+        font-size: 2.5vw;
+        font-family: 'Inter-Bold';
+        font-weight: 900;
+        padding: 2vw 4vw;
+    }
+
+    .PhaseContent{
+        display: flex;
+        flex-direction: column;
+        width: 79%;
+        height: calc(100% - 6.9vw);
+        margin-left: 21%;
+        color: #FFFBFF;
+        font-size: 2vw;
+        line-height: 3.8vw;
+        font-family: 'Inter-Regular';
+        font-weight: 400;
+
+        .phaseContentList{
+            display: block;
+            position: relative;
+
+            img{
+                display: block;
+                position: absolute;
+                left: -7.5%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }   
+    }
+}

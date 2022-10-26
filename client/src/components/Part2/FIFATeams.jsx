@@ -64,6 +64,8 @@ const FIFATeams = () => {
                 }
             </div>
         </div>
+
+        <div className='squareMark'></div>
     </div>
   )
 }

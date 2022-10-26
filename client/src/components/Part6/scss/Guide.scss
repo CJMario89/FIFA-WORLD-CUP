@@ -1,0 +1,51 @@
+.Guide{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 75%;
+    padding-left: 20%;
+    height: auto;
+
+    .GuideImage{
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10%;
+        height: 100%;
+
+        img{
+            display: block;
+            position: absolute;
+            left: 135%;
+            top: 0px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .GuideTitle{
+        display: block;
+        position: relative;
+        font-size: 2vw;
+        font-family: 'Inter-Bold';
+        font-weight: 900;
+        color: #FFFBFF;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        letter-spacing: 2px;
+    }
+
+
+    .GuideDescription{
+        display: block;
+        position: relative;
+        font-size: 1.4vw;
+        font-family: 'Inter-Regular';
+        font-weight: 300;
+        color: #FFFBFF;
+        letter-spacing: 2px;
+        line-height: 2.2vw
+    }
+}

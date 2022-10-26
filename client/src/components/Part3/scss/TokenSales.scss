@@ -1,0 +1,299 @@
+.TokenSales{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 77.43%;
+    background-color: #581026;
+
+    .TokenSalesContainer{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+
+        .TokenSalesDescription{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 54%;
+            height: 100%;
+
+
+            .TokenSalesDescriptionTitle{
+                position: relative;
+                display: block;
+                width: max-content;
+                margin-top: 7%;
+                margin-left: 5%;
+                font-size: 4.1vw;
+                line-height: 7vw;
+                font-family: 'Inter-Bold';
+                font-weight: 900;
+                color: #FFFBFF;
+                letter-spacing: 2px;
+            }
+            .TokenSalesDescriptionContent{
+                display: block;
+                position: relative;
+                width: max-content;
+                margin-left: 6%;
+                font-size: 1.2vw;
+                line-height: 2vw;
+                letter-spacing: 0.3px;
+                color: #FFFBFF;
+            }
+
+            .TokenSalesLaunched{
+                display: block;
+                position: relative;
+                width: max-content;
+                margin-left: 5%;
+                margin-top: 6%;
+                padding: 1vw 1.8vw;
+                font-size: 3.8vw;
+                letter-spacing: 2px;
+                font-family: 'Inter-Bold';
+                font-weight: 900;
+                line-height: 6vw;
+                border: 4px solid #1EA912;
+                border-radius: 2vw;
+                color: #40D00E;
+            }
+
+            .TokenSalesAddress{
+                display: block;
+                position: relative;
+                width: max-content;
+                margin-left: 6%;
+                margin-top: 4%;
+                font-size: 1.2vw;
+                color: #FFFBFF;
+                letter-spacing: 0.3px;
+            }
+
+            .TokenSalesDescriptionImg{
+                display: block;
+                position: relative;
+                width: 100%;
+                height: fill-available;
+                height: -webkit-fill-available;
+
+                img:nth-child(1){
+                    display: block;
+                    position: absolute;
+                    left: 38%;
+                    top: 31%;
+                    width: 35%;
+                    transform: translate(-50%, -50%);
+                }
+                img:nth-child(2){
+                    display: block;
+                    position: absolute;
+                    left: 75%;
+                    top: 30%;
+                    transform: translate(-50%, -50%);
+                    width: 60%;
+                }
+            }
+        }
+
+        .TokenSalesAPI{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 46%;
+            height: 100%;
+
+
+            .TokenSalesAPIDescription{
+                position: relative;
+                display: block;
+                width: max-content;
+                margin-top: 10%;
+                font-size: 1.6vw;
+                line-height: 2vw;
+                font-family: 'Inter-Bold';
+                font-weight: 500;
+                color: #FFFBFF;
+            }
+
+            .TokenSalesAPIInput{
+                display: block;
+                position: relative;
+                padding: 1vw;
+                margin-top: 3vw;
+                width: 53%;
+                font-size: 1.4vw;
+                font-family: 'Inter-Bold';
+                font-weight: 500;
+                text-align: center;
+                background: #D1D3E8;
+                border-radius: 0.5vw;
+                color: #642F8E;
+                outline: none;
+            }
+
+            .TokenSalesAPIBuy{
+                display: block;
+                position: relative;
+                padding: 1.6vw 3.2vw;
+                margin-top: 8%;
+                font-size: 1.6vw;
+                font-family: "Inter-Bold";
+                font-weight: 500;
+                background-color: #F1E3E6;
+                color: #581026;
+                border-radius: 1vw;
+                cursor: pointer;
+            }
+
+            .TokenSalesAPIFreemint{
+                display: block;
+                position: relative;
+                margin-top: 8%;
+                font-size: 1.6vw;
+                font-family: "Inter-Bold";
+                font-weight: 500;
+                color: #FFFFFF;
+                border-radius: 1vw;
+                padding: 0.5vw;
+                border: 4px solid #1EA912;
+                cursor: pointer;
+
+                span{
+                    display: block;
+                    padding: 1.6vw 3.2vw;
+                    background-color: #1EA912;
+                    border-radius: 1vw;
+                }
+            }
+
+            .TokenSalesAPIReferral{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                height: fill-available;
+                height: -webkit-fill-available;
+                margin-top: 10%;
+                font-size: 1.6vw;
+                font-family: "Inter-Bold";
+                font-weight: 900;
+                color: #FFFBFF;
+                letter-spacing: 1px;
+
+                .TokenSalesAPIReferralTitle{
+                    display: block;
+                    position: relative;
+                    width: 60%;
+                    padding: 1vw;
+                    padding-left: 2vw;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 0px;
+                        left: 7%;
+                        height: 1px;
+                        width: 87%;
+                        background-color: #FAF1F1;
+                        opacity: 0.5;
+                    }
+                    &::after{
+                        content: 'Get 15% BNB per referral';
+                        display: block;
+                        position: absolute;
+                        bottom: -63%;
+                        left: 7%;
+                        width: 87%;
+                        font-size: 1.2vw;
+                        font-family: "Inter-Regular";
+                        font-weight: 400;
+                        color: #FFFBFF;
+                    }
+                }
+
+                .TokenSalesAPIReferralURL{
+                    display: block;
+                    position: relative;
+                    padding: 0.8vw;
+                    margin-top: 5vw;
+                    width: 54%;
+                    font-size: 1.4vw;
+                    font-family: "Inter-Bold";
+                    font-weight: 900;
+                    background: #D1D3E8;
+                    border-radius: 0.5vw;
+                    color: #581026;
+                    outline: none;
+                }
+
+                .TokenSalesAPIReferralCopy{
+                    display: block;
+                    position: relative;
+                    padding: 1vw 2.2vw;
+                    background-color: #FAF1F1;
+                    border-radius: 0.5vw;
+                    color: #581026;
+                    font-size: 1.4vw;
+                    font-family: "Inter-Bold";
+                    font-weight: 700;
+                    margin-top: 5%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    .TokenSalesProviders{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 15%;
+        bottom: 0px;
+        background: rgba(133, 26, 52, 0.6);
+
+        .ProviderImg{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: calc(100% / 7);
+            height: 100%;
+            position: relative;
+            img{
+                display: block;
+                position: relative;
+                width: 100;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &:not(:last-child)::before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: 0px;
+                height: 20%;
+                width: 1px;
+                background-color: #FFFFFF;
+                opacity: 0.75;
+            }
+        }
+
+    }
+}

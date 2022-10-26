@@ -1,13 +1,13 @@
-import './scss/Navbar.scss'
+import './scss/Footer.scss'
 import React from 'react'
 import logo from '../assets/images/logo.png'
 
-const Navbar = () => {
+const Footer = () => {
   return (
-    <div className='Navbar'>
-        <div className='NavbarLeft'>
+    <div className='Footer'>
+        <div className='FooterLeft'>
             <img src={logo} alt=''></img>
-            <div className='NavbarOption'>
+            <div className='FooterOption'>
                 <div>
                     TOKENOMICS
                 </div>
@@ -23,16 +23,12 @@ const Navbar = () => {
             </div>
         </div>
 
-        <div className='NavbarRight'>
-            <div className='NavbarTelegram'>
-                Telegram 🎉
-            </div>
-            <div className=' NavbarConnectWallet'>
-                CONNECT WALLET  🚀
-            </div>
+        <div className='FooterRight'>
+            
         </div>
+        
     </div>
   )
 }
 
-export default Navbar
+export default Footer

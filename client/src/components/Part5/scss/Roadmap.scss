@@ -1,0 +1,67 @@
+.Roadmap{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 101%;
+    background-color: #581026;
+
+    .RoadmapContainer{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    .RoadmapTitle{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        font-size: 3.8vw;
+        font-family: 'Inter-Bold';
+        font-weight: 900;
+        color: #FFFBFF;
+        letter-spacing: 1px;
+    }
+
+    .Phases{
+        display: block;
+        position: absolute;
+        width: 34.7%;
+        height: auto;
+        padding-bottom: 3vw;
+        border-radius: 1.2vw;
+        background: #851A34;
+    }
+
+    .phase1{
+        display: block;
+        position: absolute;
+        left: 8vw;
+        top: 17vw;
+    }
+    .phase2{
+        display: block;
+        position: absolute;
+        left: 51vw;
+        top: 17vw;
+    }
+    .phase3{
+        display: block;
+        position: absolute;
+        left: 17vw;
+        top: 63.5vw;
+    }
+    .phase4{
+        display: block;
+        position: absolute;
+        left: 60vw;
+        top: 63.5vw;
+    }
+}

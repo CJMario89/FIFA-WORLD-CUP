@@ -1,0 +1,48 @@
+.Footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    background-color: #851A34;
+    white-space: nowrap;
+    z-index: 100;
+
+    .FooterLeft{
+        display: flex;
+        flex-direction: row;
+
+        .FooterOption{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: auto;
+            color: #FFFBFF;
+            font-size: 1.2vw;
+            font-weight: 100;
+            margin-left: 4vw;
+        
+            div{
+                margin-left: 1.5vw;
+                margin-right: 1.5vw;
+                cursor: pointer;
+
+                &:hover{
+                    color: #EEC73C !important;
+                }
+            }
+        }
+    }
+
+    .FooterRight{
+        display: flex;
+        flex-direction: row;
+        margin-right: 2vw;
+    }    
+}
+
