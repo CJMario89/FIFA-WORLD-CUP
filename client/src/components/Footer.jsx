@@ -8,13 +8,13 @@ const Footer = () => {
         <div className='FooterLeft'>
             <img src={logo} alt=''></img>
             <div className='FooterOption'>
-                <div>
+                <div onClick={()=>{document.getElementById("TokenomicsContainer").scrollIntoView({behavior: 'smooth'})}}>
                     TOKENOMICS
                 </div>
-                <div>
+                <div onClick={()=>{document.getElementById("RoadmapContainer").scrollIntoView({behavior: 'smooth'})}}>
                     ROADMAP
                 </div>
-                <div>
+                <div onClick={()=>{document.getElementById("TokenGuideContainer").scrollIntoView({behavior: 'smooth'})}}>
                     HOW TO BUY
                 </div>
                 <div>

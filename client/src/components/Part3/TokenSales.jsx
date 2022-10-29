@@ -1,11 +1,20 @@
 import './scss/TokenSales.scss'
-import React, { useEffect } from 'react'
+import React, { useRef } from 'react'
 import soccer from '../../assets/images/part2/soccer.png'
+import soccer_square from '../../assets/images/part2/soccer_square.png'
 import FIFA from '../../assets/images/part2/FIFA.png'
 import { v4 as uuidv4 } from 'uuid'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectWallet, selectWalletStatus } from '../../features/WalletSlice'
+import { freemint, mint } from '../../features/ContractInteraction'
+import { alertMsg } from '../../features/MessageSlice'
 
 const TokenSales = () => {
-
+    const walletStatus = useSelector(selectWalletStatus);
+    const wallet = useSelector(selectWallet);
+    const TokenSalesAPIInput = useRef(null);
+    const TokenSalesAPIReferralURL = useRef(null);
+    const dispatch = useDispatch();
 
     const providers = [];
     for(var i = 1; i < 8; i++){
@@ -14,7 +23,75 @@ const TokenSales = () => {
     }
 
 
-   
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+
+    const importToken = async()=>{
+        if(typeof window.provider !== 'undefined'){
+            await window.provider.request({
+                method: 'wallet_watchAsset',
+                params: {
+                type: 'ERC20',
+                options: {
+                    address: window.contractAddress,
+                    symbol: "FIFFA",
+                    decimals: 18,
+                    image: soccer_square
+                },
+                },
+            });
+        }else{
+            dispatch(alertMsg("Please connect wallet first"));
+        }
+    }
+
+    const onFreemint = async()=>{
+        if(walletStatus !== 'unconnected'){
+            dispatch(alertMsg("Free minting"));
+            try{
+                await freemint(params.ref);
+                dispatch(alertMsg("Free minted"))
+                importToken();
+            }catch(e){
+                if(e.hasOwnProperty('message')){
+                    console.log(e);
+                }else{
+                    dispatch(alertMsg(e));
+                }
+            }
+            
+        }else{
+            dispatch(alertMsg("Please connect wallet first"));
+        }
+    }
+
+    const onMint = async()=>{
+        const referral = (typeof params.ref === "undefined" ? "0x0000000000000000000000000000000000000000" : params.ref);
+        if(walletStatus !== 'unconnected'){
+            dispatch(alertMsg("Minting"));
+            try{
+                await mint(TokenSalesAPIInput.current.value, referral);
+                dispatch(alertMsg("Minted"))
+                importToken();
+            }catch(e){
+                if(e.hasOwnProperty('message')){
+                    console.log(e);
+                }else{
+                    dispatch(alertMsg(e));
+                }
+            }
+        }else{
+            dispatch(alertMsg("Please connect wallet first"));
+        }
+    }
+
+    const copyReferralLink = async()=>{
+        await navigator.clipboard.writeText(TokenSalesAPIReferralURL.current.value);
+        dispatch(alertMsg("Copied"))
+    }
+
+    window.contractAddress = '0x554E312954749f5F54a912F7d9E76c89aAba2389';
 
   return (
     <div className='TokenSales'>
@@ -34,7 +111,8 @@ const TokenSales = () => {
                     5d  ：  6h  ：  48m  ：  15s
                 </div>
                 <div className='TokenSalesAddress'>
-                    0x8C6060B7ba14c0Fbb88adE1F5f41cD0383CEc4f3
+                    { window.contractAddress }
+                    <div className='TokenSalesImportToken' onClick={()=>{importToken()}}>Import FIFFA token</div>
                 </div>
                 <div className='TokenSalesDescriptionImg'>
                     <img src={FIFA} alt=""></img>
@@ -48,11 +126,11 @@ const TokenSales = () => {
                     Buy 1 BNB = 100,000,000 FIFA<br/>
                     Buy 10 BNB = 1,000,000,000 FIFA
                 </div>
-                <input className='TokenSalesAPIInput' defaultValue="0.5"></input>
-                <div className='TokenSalesAPIBuy'>
+                <input className='TokenSalesAPIInput' ref={TokenSalesAPIInput} defaultValue="0.5"></input>
+                <div className='TokenSalesAPIBuy' onClick={()=>{onMint()}}>
                     🔥BUY FIFFA
                 </div>
-                <div className='TokenSalesAPIFreemint'>
+                <div className='TokenSalesAPIFreemint' onClick={()=>{onFreemint()}}>
                     <span>
                         💰 CLAIM FREE $FIFFA
                     </span>
@@ -61,23 +139,35 @@ const TokenSales = () => {
                     <div className='TokenSalesAPIReferralTitle'>
                         GENERATE REFERRAL LINK
                     </div>
-                    <input className='TokenSalesAPIReferralURL' defaultValue={window.location.host+'/?ref=address'} disabled></input>
-                    <div className='TokenSalesAPIReferralCopy'>
+                    <input className='TokenSalesAPIReferralURL' ref={TokenSalesAPIReferralURL} value={`${window.location.host}/?ref=${wallet.address !== '' ? wallet.address : '0x0000000000000000000000000000000000000000'}`} disabled></input>
+                    <div className='TokenSalesAPIReferralCopy' onClick={()=>{copyReferralLink()}}>
                         COPY LINK
                     </div>
                 </div>
             </div>
         </div>
         <div className='TokenSalesProviders'>
-            {
-                providers.map((img, index)=>{
-                    return(
-                        <div className='ProviderImg' key={uuidv4()}>
-                            {index === 1 || index === 2 || index === 3 || index === 4? <img src={img} alt='' style={{width: '57%'}}></img> : <img src={img} alt=''></img>} 
-                        </div>
-                    )
-                })
-            }
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://www.hotbit.io/exchange?symbol=BNB_FIFFA", "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_1.png`)} alt=''></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=97`,"_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_2.png`)} alt='' style={{width: '57%'}}></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://www.coinbase.com/price/bnb", "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_3.png`)} alt='' style={{width: '57%'}}></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://coinmarketcap.com/currencies/bnb/", "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_4.png`)} alt='' style={{width: '57%'}}></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://www.coingecko.com/en/coins/bnb", "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_5.png`)} alt='' style={{width: '57%'}}></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open(`https://poocoin.app/tokens/${window.contractAddress}`, "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_6.png`)} alt=''></img>
+            </div>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open(`https://charts.bogged.finance/?c=bsc&t=${window.contractAddress}`, "_blank")}}>
+                <img src={require(`../../assets/images/part2/part2_7.png`)} alt=''></img> 
+            </div>
         </div>
     </div>
   )

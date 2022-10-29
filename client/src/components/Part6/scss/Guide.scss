@@ -5,6 +5,12 @@
     width: 75%;
     padding-left: 20%;
     height: auto;
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+
+    &:hover{
+        transform: scale(1.05);
+    }
 
     .GuideImage{
         display: block;
@@ -48,5 +54,18 @@
         color: #FFFBFF;
         letter-spacing: 2px;
         line-height: 2.2vw
+    }
+}
+
+.ShowGuide{
+    animation: ShowGuide 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes ShowGuide {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

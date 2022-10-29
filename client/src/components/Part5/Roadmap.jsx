@@ -2,7 +2,6 @@ import './scss/Roadmap.scss'
 import React from 'react'
 import Phase from './Phase'
 import soccer from '../../assets/images/part5/soccer1.png'
-import { useRef } from 'react'
 import { useEffect } from 'react'
 
 const Roadmap = () => {
@@ -67,26 +66,26 @@ const Roadmap = () => {
                 document.querySelectorAll(".Dashed").forEach((dom)=>{
                     setTimeout(()=>{
                         dom.classList.add("DashedAnimation");
-                    }, i * 250)
+                    }, i * 200)
                     if(i === 0){
                         setTimeout(()=>{
                             document.querySelector(".phase1").querySelector(".Phase").classList.add("ShowPhase");
-                        }, i * 250)
+                        }, i * 200)
                     }
                     if(i === 1){
                         setTimeout(()=>{
                             document.querySelector(".phase2").querySelector(".Phase").classList.add("ShowPhase");
-                        }, i * 250)
+                        }, i * 200)
                     }
                     if(i === 15){
                         setTimeout(()=>{
                             document.querySelector(".phase3").querySelector(".Phase").classList.add("ShowPhase");
-                        }, i * 250)
+                        }, i * 200)
                     }
                     if(i === 16){
                         setTimeout(()=>{
                             document.querySelector(".phase4").querySelector(".Phase").classList.add("ShowPhase");
-                        }, i * 250)
+                        }, i * 200)
                     }
                     i++;
                 })
@@ -96,7 +95,7 @@ const Roadmap = () => {
 
   return (
     <div className='Roadmap'>
-        <div className='RoadmapContainer'>
+        <div className='RoadmapContainer' id='RoadmapContainer'>
             <div className='RoadmapTitle'>
                 FIFA TOKEN’S&ensp;<span style={{color: '#F9DC44'}}>ROADMAP</span>
             </div>

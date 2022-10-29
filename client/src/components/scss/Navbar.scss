@@ -17,6 +17,10 @@
         display: flex;
         flex-direction: row;
 
+        .Logo{
+            width: 18.4vw;
+        }
+
         .NavbarOption{
             position: relative;
             display: flex;
@@ -62,6 +66,22 @@
                 transform: scale(0.95);
             }
         }
+
+        .DisconnectButton{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+            right: 3vw;
+            top: 5.2vw;
+            border-radius: 0.5vw;
+            padding: 0.4vw 0.7vw;
+            font-size: 0.7vw;
+            font-weight: 500;
+            color: #581026;
+            background-color: #F1E3E6;
+            cursor: pointer;
+        }
         .NavbarTelegram{
             margin-right: 1vw;
         }
@@ -91,5 +111,6 @@
 
 .HideNavbar{
     transform: translateY(-100%);
+    opacity: 0;
 }
 

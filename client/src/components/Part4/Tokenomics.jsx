@@ -56,9 +56,9 @@ useEffect(()=>{
 
   return (
     <div className='Tokenomics'>
-        <div className='TokenomicsContainer'>
+        <div className='TokenomicsContainer' id="TokenomicsContainer">
             <div className='TokenomicsTitle'>
-                FIFA WORLD CUP 2022’S <span style={{color: '#F9DC44'}}>TOKENOMICS</span>
+                FIFA WORLD CUP 2022’S&ensp;<span style={{color: '#F9DC44'}}>TOKENOMICS</span>
             </div>
             <div className='TokenomicsRules'>
                 {

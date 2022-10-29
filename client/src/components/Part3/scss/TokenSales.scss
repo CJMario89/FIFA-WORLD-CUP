@@ -75,6 +75,25 @@
                 font-size: 1.2vw;
                 color: #FFFBFF;
                 letter-spacing: 0.3px;
+
+                .TokenSalesImportToken{
+                    display: block;
+                    position: absolute;
+                    padding: 1vw 2.2vw;
+                    background-color: #FAF1F1;
+                    border-radius: 0.5vw;
+                    color: #581026;
+                    font-size: 1.4vw;
+                    font-family: "Inter-Bold";
+                    font-weight: 700;
+                    margin-top: 5%;
+                    cursor: pointer;
+                    z-index: 1;
+
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+                }
             }
 
             .TokenSalesDescriptionImg{
@@ -298,6 +317,11 @@
                 width: 100;
                 height: 100%;
                 object-fit: contain;
+                cursor: pointer;
+
+                &:hover{
+                    transform: scale(0.9);
+                }
             }
 
             &:not(:last-child)::before{

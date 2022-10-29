@@ -18,7 +18,7 @@ const FIFATeams = () => {
         },
         {
             'title': 'Group C',
-            'countries': ['Argentina', 'Saudi_Arabia', 'Mexico', 'Polard']
+            'countries': ['Argentina', 'Saudi_Arabia', 'Mexico', 'Poland']
         },
         {
             'title': 'Group D',
