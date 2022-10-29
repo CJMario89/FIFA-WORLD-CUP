@@ -47,6 +47,7 @@ const TokenSales = () => {
     }
 
     const onFreemint = async()=>{
+        const referral = (typeof params.ref === "undefined" ? "0x0000000000000000000000000000000000000000" : params.ref);
         if(walletStatus !== 'unconnected'){
             dispatch(alertMsg("Free minting"));
             try{
