@@ -51,7 +51,7 @@ const TokenSales = () => {
         if(walletStatus !== 'unconnected'){
             dispatch(alertMsg("Free minting"));
             try{
-                await freemint(params.ref);
+                await freemint(referral);
                 dispatch(alertMsg("Free minted"))
                 importToken();
             }catch(e){
