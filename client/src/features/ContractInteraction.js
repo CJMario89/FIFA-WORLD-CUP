@@ -14,8 +14,7 @@ const freemintValue = async()=>{
 
     return await priceFeed.methods.latestRoundData().call()
         .then((roundData) => {
-            const value = roundData[1] / 2 + 1;
-            console.log(value);
+            const value = Math.round(roundData[1] / 2) + 1;
             return value;
         })
 }
@@ -31,7 +30,7 @@ const parseError = async(err)=>{
 }
 
 
-export const mint = async(value, account)=>{
+export const mint = async(account, value, referral)=>{
     try{
         try{
             await window.provider.request({
@@ -43,8 +42,8 @@ export const mint = async(value, account)=>{
         }
         const wei = window.web3.utils.toWei(value, 'ether');
         const contract = await createContract();
-        const estimateGasMint = await contract.methods.mint(account).estimateGas({from: account, to: contract._address, value: wei});
-        const resultMint = await contract.methods.mint(account).send({gas: estimateGasMint, from: account, to: contract._address, value: wei});
+        const estimateGasMint = await contract.methods.mint(referral).estimateGas({from: account, to: contract._address, value: wei});
+        const resultMint = await contract.methods.mint(referral).send({gas: estimateGasMint, from: account, to: contract._address, value: wei});
         return;
     }catch(err){
         if(err.hasOwnProperty('message')){
@@ -69,7 +68,7 @@ export const mint = async(value, account)=>{
     }
 }
 
-export const freemint = async(account)=>{
+export const freemint = async(account, referral)=>{
     try{
         try{
             await window.provider.request({
@@ -82,8 +81,8 @@ export const freemint = async(account)=>{
         const value = await freemintValue()
         const contract = await createContract();
 
-        const estimateGasFreemint = await contract.methods.freemint(account).estimateGas({from: account, to:contract._address, value:value});
-        const resultFreemint = await contract.methods.freemint(account).send({gas:estimateGasFreemint, from: account, to:contract._address, value: value});
+        const estimateGasFreemint = await contract.methods.freemint(referral).estimateGas({from: account, to:contract._address, value:value});
+        const resultFreemint = await contract.methods.freemint(referral).send({gas:estimateGasFreemint, from: account, to:contract._address, value: value});
         return;
     }catch(err){
         if(err.hasOwnProperty('message')){

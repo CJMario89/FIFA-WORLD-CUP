@@ -16,11 +16,6 @@ const TokenSales = () => {
     const TokenSalesAPIReferralURL = useRef(null);
     const dispatch = useDispatch();
 
-    const providers = [];
-    for(var i = 1; i < 8; i++){
-        const img = require(`../../assets/images/part2/part2_${i}.png`);
-        providers.push(img);
-    }
 
 
     const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -47,11 +42,11 @@ const TokenSales = () => {
     }
 
     const onFreemint = async()=>{
-        const referral = (typeof params.ref === "undefined" ? "0x0000000000000000000000000000000000000000" : params.ref);
+        const referral = (params.ref === null ? "0x0000000000000000000000000000000000000000" : params.ref);
         if(walletStatus !== 'unconnected'){
             dispatch(alertMsg("Free minting"));
             try{
-                await freemint(referral);
+                await freemint(wallet.address, referral);
                 dispatch(alertMsg("Free minted"))
                 importToken();
             }catch(e){
@@ -68,11 +63,11 @@ const TokenSales = () => {
     }
 
     const onMint = async()=>{
-        const referral = (typeof params.ref === "undefined" ? "0x0000000000000000000000000000000000000000" : params.ref);
+        const referral = (params.ref === null ? "0x0000000000000000000000000000000000000000" : params.ref);
         if(walletStatus !== 'unconnected'){
             dispatch(alertMsg("Minting"));
             try{
-                await mint(TokenSalesAPIInput.current.value, referral);
+                await mint(wallet.address, TokenSalesAPIInput.current.value, referral);
                 dispatch(alertMsg("Minted"))
                 importToken();
             }catch(e){
