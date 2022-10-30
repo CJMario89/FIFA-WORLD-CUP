@@ -100,6 +100,7 @@ const TokenSales = () => {
             </div>
             <div className='TokenSalesMobileDescription'>
                 Win hundreds and thousands of dollars every day all day long with 24/7 lucky draw, automated and fulfilled by our smart contract. Purchase FIFFA with the minimum qualifying buy amount of $20 equivalent and get automatically enrolled to win the jackpot. Lucky draw is designed to make buying a habit.FIFFA token will be the best way to support your dream team!
+                <img src={soccer} className='TokenSalesMobileSoccer'></img>
             </div>
             <div className='TokenSalesMobileAPIBuy' onClick={()=>{document.getElementById('TokenSalesLaunched').scrollIntoView({'behavior':'smooth'})}}>
                 🔥BUY FIFFA

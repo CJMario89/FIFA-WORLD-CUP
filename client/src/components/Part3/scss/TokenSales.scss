@@ -47,9 +47,10 @@
             display: none;
             @include mobile{
                 display: block;
+                position: relative;
                 text-align: left;
-                width: 60%;
-                margin-left: 16%;
+                width: 63%;
+                margin-left: 14%;
                 font-size: 3vw;
                 line-height: 5vw;
                 color: #FFFBFF;
@@ -57,6 +58,18 @@
                 font-weight: 500;
                 margin-bottom: 10vw;
                 margin-top: 5vw;
+            }
+        }
+        .TokenSalesMobileSoccer{
+            display: none;
+            @include mobile{
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 30vw;
+                right: -37vw;
+                bottom: -15vw;
+                animation: SoccerImg 3s ease-in-out 0s infinite normal forwards;
             }
         }
 
@@ -266,8 +279,7 @@
                     transform: translate(-50%, -50%);
                     width: 60%;
                     @include mobile{
-                        left: 67%;
-                        width: 30%;
+                        display: none;
                     }
                 }
 
@@ -670,20 +682,5 @@
     }
     100%{
         transform: translate(-50%, -50%);
-    }
-}
-
-
-@include mobile{
-    @keyframes SoccerImg{
-        0%{
-            transform: translate(0%, -550%);
-        }
-        50%{
-            transform: translate(0%, -565%);
-        }
-        100%{
-            transform: translate(0%, -550%);
-        }
     }
 }
