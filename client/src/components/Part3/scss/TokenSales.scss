@@ -66,9 +66,9 @@
                 display: block;
                 position: absolute;
                 background: linear-gradient(to right, #F1E3E6 0%, #F1E3E6 20%, transparent 20%, transparent 80%, #F1E3E6 80%, #F1E3E6 100%);
-                top: 31.8%;
-                left: 10%;
-                width: 80%;
+                top: 33%;
+                left: -51%;
+                width: 200%;
                 height: 2px;
                 opacity: 0.5;
                 border: none;
@@ -230,7 +230,7 @@
                         padding: 3vw 4vw;
                         font-size: 3.4vw;
                         top: 7vw;
-                        left: 12vw;
+                        left: 11vw;
                         border-radius: 2vw;
                     }
                 }
@@ -242,6 +242,10 @@
                 width: 100%;
                 height: fill-available;
                 height: -webkit-fill-available;
+
+                @include mobile{
+                    height: auto;
+                }
 
                 img:nth-child(1){
                     display: block;
@@ -423,6 +427,7 @@
                     padding-bottom: 7vw;
                     margin-bottom: 10vw;
                     letter-spacing: 0px;
+                    height: auto;
 
                     &::before{
                         content: '';
