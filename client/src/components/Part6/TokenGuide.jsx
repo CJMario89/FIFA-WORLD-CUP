@@ -25,7 +25,7 @@ const TokenGuide = () => {
         {
             'image': require(`../../assets/images/part6/guide4.png`),
             'title': 'View FIFA and HODL',
-            'description': 'Swap BNB for FIFA. Now you need to add FIFFA token to your MetaMask (Tutorial here) or Trust Wallet to view your $FIFA. Lastly HODL!'
+            'description': 'Swap BNB for FIFA. Now you need to add FIFFA token to your MetaMask or Trust Wallet to view your $FIFA. Lastly HODL!'
         }
     ]
 

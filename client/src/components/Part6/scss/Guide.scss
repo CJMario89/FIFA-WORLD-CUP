@@ -1,3 +1,8 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .Guide{
     display: flex;
     flex-direction: column;
@@ -12,6 +17,12 @@
         transform: scale(1.05);
     }
 
+    @include mobile{
+        width: 70%;
+        margin-top: 10vw;
+        padding-left: 25%;
+    }
+
     .GuideImage{
         display: block;
         position: absolute;
@@ -20,6 +31,12 @@
         transform: translate(-50%, -50%);
         width: 10%;
         height: 100%;
+
+        @include mobile{
+            width: 17%;
+            left: -9%;
+            top: 47%;
+        }
 
         img{
             display: block;
@@ -42,6 +59,11 @@
         padding-top: 2vw;
         padding-bottom: 2vw;
         letter-spacing: 2px;
+
+        @include mobile{
+            font-size: 4.2vw;
+            margin-bottom: 3vw;
+        }
     }
 
 
@@ -53,7 +75,12 @@
         font-weight: 300;
         color: #FFFBFF;
         letter-spacing: 2px;
-        line-height: 2.2vw
+        line-height: 2.2vw;
+
+        @include mobile{
+            font-size: 3.6vw;
+            line-height: 4vw;
+        }
     }
 }
 

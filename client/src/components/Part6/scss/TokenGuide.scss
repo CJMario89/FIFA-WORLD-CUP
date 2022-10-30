@@ -1,9 +1,32 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .TokenGuide{
     display: block;
     position: relative;
     width: 100%;
     padding-top: 87.5%;
     background-color: #581026;
+
+    @include mobile{
+        margin-top: 10vw;
+        padding-top: 10vw;
+        height: auto;
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background-color: #FAF1F1;
+            opacity: 0.5;
+        }
+    }
 
     .TokenGuideContainer{
         display: flex;
@@ -13,6 +36,11 @@
         height: 100%;
         left: 0px;
         top: 0px;
+
+        @include mobile{
+            position: relative;
+            height: auto;
+        }
 
         .TokenGuideTitle{
             position: relative;
@@ -28,6 +56,10 @@
             color: #FFFBFF;
             letter-spacing: 1px;
             text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+            @include mobile{
+                font-size: 5.6vw;
+            }
         }
 
         .TokenGuideContent{
@@ -37,21 +69,36 @@
             height: 80%;
             width: 100%;
 
+            @include mobile{
+                flex-direction: column-reverse;
+                margin-top: 5vw;
+            }
+
             .TokenGuideContentImage{
                 display: block;
                 position: relative;
                 width: 35%;
                 height: 100%;
 
+                @include mobile{
+                    width: auto;
+                    height: 160vw;
+                    overflow: hidden;
+                }
+
                 img{
                     display: block;
                     position: absolute;
-                    top: 50%;
-                    left: 80%;
+                    top: 45%;
+                    left: 60%;                
                     transform: translate(-50%, -50%);
                     height: 80%;
                     width: auto;
                     filter: drop-shadow(-1px 20px 5px rgba(30, 30, 30, 0.5));
+
+                    @include mobile{
+                        left: 50%;
+                    }
                 }
             }
 
@@ -62,6 +109,11 @@
                 position: relative;
                 width: 65%;
                 height: 90%;
+
+                @include mobile{
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }

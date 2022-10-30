@@ -1,5 +1,10 @@
+@mixin mobile{
+    @media(max-width: 1000px){
+        @content;
+    }
+}
 .Navbar{
-    position: fixed;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,6 +24,10 @@
 
         .Logo{
             width: 18.4vw;
+
+            @include mobile{
+                width: 35vw;
+            }
         }
 
         .NavbarOption{
@@ -31,6 +40,10 @@
             font-size: 1.2vw;
             font-weight: 100;
             margin-left: 4vw;
+            
+            @include mobile{
+                display: none;
+            }
         
             div{
                 margin-left: 1.5vw;
@@ -62,10 +75,32 @@
             background-color: #F1E3E6; 
             cursor: pointer;
 
+            
+
             &:hover{
                 transform: scale(0.95);
             }
         }
+        @include mobile{
+            .NavbarTelegram{
+                padding: 1.2vw 2.4vw;
+                font-size: 3vw;
+                color: #F1E3E6;
+                background-color: transparent; 
+            }
+            .NavbarConnectWallet{
+                position: absolute;
+                bottom: -58vw;
+                right: 16vw;
+                padding: 2vw 4vw;
+                font-size: 3vw;
+            }
+        }
+            
+
+
+    
+
 
         .DisconnectButton{
             display: flex;
@@ -81,6 +116,15 @@
             color: #581026;
             background-color: #F1E3E6;
             cursor: pointer;
+
+            @include mobile{             
+                position: absolute;
+                right: 19.4vw;
+                padding: 1vw 2vw;
+                font-size: 2.4vw;
+                top: 58vw;
+                border-radius: 0.8vw;
+            }
         }
         .NavbarTelegram{
             margin-right: 1vw;
@@ -97,9 +141,18 @@
     opacity: 1;
     cursor: pointer;
     transition: all 0.8s ease-in-out;
+    @include mobile{
+        right: 5vw;
+        bottom: 5vw;
+    }
+    
 
     svg{
         filter: invert(86%) sepia(15%) saturate(139%) hue-rotate(292deg) brightness(89%) contrast(87%);
+        @include mobile{
+            width: 12vw;
+            height: 12vw;
+        }
     }
 }
 

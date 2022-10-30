@@ -1,9 +1,19 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .TokenSales{
     display: block;
     position: relative;
     width: 100%;
     padding-top: 77.43%;
     background-color: #581026;
+
+    @include mobile{
+        padding-top: 5%;
+        height: auto;
+    }
 
     .TokenSalesContainer{
         position: absolute;
@@ -14,6 +24,88 @@
         width: 100%;
         height: 100%;
 
+        @include mobile{
+            position: relative;
+            flex-direction: column;
+            height: auto;
+        }
+
+
+        .TokenSalesMobileTitle{
+            display: none;
+            @include mobile{
+                display: block;
+                text-align: center;
+                font-size: 10vw;
+                line-height: 15vw;
+                color: #FFFBFF;
+                font-family: 'Inter-Bold';
+                font-weight: 900;
+            }
+        }
+        .TokenSalesMobileDescription{
+            display: none;
+            @include mobile{
+                display: block;
+                text-align: left;
+                width: 60%;
+                margin-left: 16%;
+                font-size: 3vw;
+                line-height: 5vw;
+                color: #FFFBFF;
+                font-family: 'Inter-Bold';
+                font-weight: 500;
+                margin-bottom: 10vw;
+                margin-top: 5vw;
+            }
+        }
+
+        .TokenSalesMobileAPIBuyHR{
+            display: none;
+            @include mobile{
+                display: block;
+                position: absolute;
+                background: linear-gradient(to right, #F1E3E6 0%, #F1E3E6 20%, transparent 20%, transparent 80%, #F1E3E6 80%, #F1E3E6 100%);
+                top: 31.8%;
+                left: 10%;
+                width: 80%;
+                height: 2px;
+                opacity: 0.5;
+                border: none;
+            }
+        }
+
+        .TokenSalesMobileAPIBuy{
+            display: none;
+            position: relative;
+            padding: 1.6vw 3.2vw;
+            margin-top: 8%;
+            font-size: 1.6vw;
+            font-family: "Inter-Bold";
+            font-weight: 500;
+            background-color: #F1E3E6;
+            color: #581026;
+            border-radius: 1vw;
+            cursor: pointer;
+
+            @include mobile{
+                display: block;
+                font-size: 4.2vw;
+                font-family: 'Inter-Bold';
+                font-weight: 500;
+                padding: 4vw 5vw;
+                border-radius: 2vw;
+                color: #851A34;
+                width: 27%;
+                margin: 0 auto;
+                margin-bottom: 9vw;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+
         .TokenSalesDescription{
             position: relative;
             display: flex;
@@ -22,6 +114,10 @@
             align-items: flex-start;
             width: 54%;
             height: 100%;
+
+            @include mobile{
+                width: 100%;
+            }
 
 
             .TokenSalesDescriptionTitle{
@@ -37,6 +133,13 @@
                 color: #FFFBFF;
                 letter-spacing: 2px;
                 text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+                @include mobile{
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 6vw;
+                    line-height: 8vw;
+                }
             }
             .TokenSalesDescriptionContent{
                 display: block;
@@ -47,6 +150,15 @@
                 line-height: 2vw;
                 letter-spacing: 0.3px;
                 color: #FFFBFF;
+
+                @include mobile{
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 3vw;
+                    line-height: 4vw;
+                    width: 60%;
+                    margin-top: 5vw;
+                }
             }
 
             .TokenSalesLaunched{
@@ -64,6 +176,17 @@
                 border: 4px solid #1EA912;
                 border-radius: 2vw;
                 color: #40D00E;
+
+                @include mobile{
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 5.2vw;
+                    margin-top: 15vw;
+                    padding: 3vw 6vw;
+                    font-weight: 500;
+                    border: 0.6vw solid #1EA912;
+                    letter-spacing: 1px;
+                }
             }
 
             .TokenSalesAddress{
@@ -75,6 +198,13 @@
                 font-size: 1.2vw;
                 color: #FFFBFF;
                 letter-spacing: 0.3px;
+
+                @include mobile{
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 2.4vw;
+                    margin-top: 5vw;
+                }
 
                 .TokenSalesImportToken{
                     display: block;
@@ -93,6 +223,16 @@
                     &:hover{
                         transform: scale(1.05);
                     }
+
+                    @include mobile{
+                        margin: 0 auto;
+                        text-align: center;
+                        padding: 3vw 4vw;
+                        font-size: 3.4vw;
+                        top: 7vw;
+                        left: 12vw;
+                        border-radius: 2vw;
+                    }
                 }
             }
 
@@ -110,6 +250,9 @@
                     top: 31%;
                     width: 35%;
                     transform: translate(-50%, -50%);
+                    @include mobile{
+                        display: none;
+                    }
                 }
                 img:nth-child(2){
                     display: block;
@@ -118,6 +261,10 @@
                     top: 30%;
                     transform: translate(-50%, -50%);
                     width: 60%;
+                    @include mobile{
+                        left: 67%;
+                        width: 30%;
+                    }
                 }
 
                 .SoccerImg{
@@ -137,6 +284,12 @@
             height: 100%;
 
 
+            @include mobile{
+                width: 100%;
+                margin-top: 15vw;
+            }
+
+
             .TokenSalesAPIDescription{
                 position: relative;
                 display: block;
@@ -147,6 +300,14 @@
                 font-family: 'Inter-Bold';
                 font-weight: 500;
                 color: #FFFBFF;
+
+                @include mobile{
+                    font-size: 3.2vw;
+                    line-height: 5vw;
+                    font-family: 'Inter-Bold';
+                    font-weight: 700;
+                    margin-top: 30%;
+                }
             }
 
             .TokenSalesAPIInput{
@@ -163,6 +324,15 @@
                 border-radius: 0.5vw;
                 color: #642F8E;
                 outline: none;
+
+                @include mobile{
+                    font-size: 4vw;
+                    padding: 2vw;
+                    font-family: 'Inter-Bold';
+                    font-weight: 700;
+                    border-radius: 2vw;
+                    width: 48%;
+                }
             }
 
             .TokenSalesAPIBuy{
@@ -177,6 +347,15 @@
                 color: #581026;
                 border-radius: 1vw;
                 cursor: pointer;
+
+                @include mobile{
+                    font-size: 4.2vw;
+                    font-family: 'Inter-Bold';
+                    font-weight: 500;
+                    padding: 3vw 5vw;
+                    border-radius: 2vw;
+                    color: #851A34;
+                }
 
                 &:hover{
                     transform: scale(1.05);
@@ -196,12 +375,26 @@
                 border: 4px solid #1EA912;
                 cursor: pointer;
 
+                @include mobile{
+                    position: absolute;
+                    font-size: 3.4vw;
+                    font-family: 'Inter-Bold';
+                    font-weight: 500;
+                    padding: 1vw 1.6vw;
+                    border-radius: 2vw;
+                    border: 2px solid #1EA912;
+                }
+
                 span{
                     display: block;
                     padding: 1.6vw 3.2vw;
                     background-color: #1EA912;
                     border-radius: 1vw;
+                    @include mobile{
+                        padding: 3vw 5vw;
+                    }
                 }
+                
 
                 &:hover{
                     transform: scale(1.05);
@@ -223,6 +416,78 @@
                 font-weight: 900;
                 color: #FFFBFF;
                 letter-spacing: 1px;
+                @include mobile{
+                    width: 85%;
+                    align-items: flex-start;
+                    padding-top: 7vw;
+                    padding-bottom: 7vw;
+                    margin-bottom: 10vw;
+                    letter-spacing: 0px;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        height: 1px;
+                        width: 100%;
+                        background: linear-gradient(to right, #F1E3E6 0%, #F1E3E6 40%, transparent 40%, transparent 60%, #F1E3E6 60%, #F1E3E6 100%);
+                        opacity: 0.5;
+                    }
+                    &::after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        height: 1px;
+                        width: 100%;
+                        background-color: #F1E3E6;
+                        opacity: 0.5;
+                    }
+
+
+                }
+
+                .TokenSalesAPIReferralSquareMark{
+                    display: none;
+                    @include mobile{
+                        display: block;
+                    }
+                    position: absolute;
+                    width: 3vw;
+                    height: 3vw;
+                    top: -2.8vw;
+                    left: 50%;
+                    transform: translate(-50%, 50%) rotate(45deg);
+                    background-color: #CABCC0;
+                    opacity: 0.5;
+            
+                    &::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 0px;
+                        width: 100%;
+                        height: 0.6vw;
+                        transform: translateY(-63%);
+                        background-color: #581026;
+                    }
+            
+                    &::after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        top: 0px;
+                        height: 100%;
+                        width: 0.6vw;
+                        transform: translateX(-63%);
+                        background-color: #581026;
+                    }
+                }
 
                 .TokenSalesAPIReferralTitle{
                     display: block;
@@ -230,6 +495,13 @@
                     width: 60%;
                     padding: 1vw;
                     padding-left: 2vw;
+                    @include mobile{
+                        font-size: 4vw;
+                        line-height: 6vw;
+                        font-family: 'Inter-Bold';
+                        font-weight: 700;
+                        white-space: nowrap;
+                    }
 
                     &::before{
                         content: '';
@@ -241,6 +513,9 @@
                         width: 87%;
                         background-color: #FAF1F1;
                         opacity: 0.5;
+                        @include mobile{
+                            display: none;
+                        }
                     }
                     &::after{
                         content: 'Get 15% BNB per referral';
@@ -253,6 +528,10 @@
                         font-family: "Inter-Regular";
                         font-weight: 400;
                         color: #FFFBFF;
+                        @include mobile{
+                            left: 4%;
+                            font-size: 3vw;
+                        }
                     }
                 }
 
@@ -269,6 +548,19 @@
                     border-radius: 0.5vw;
                     color: #581026;
                     outline: none;
+
+                    @include mobile{
+                        font-size: 3.2vw;
+                        line-height: 4vw;
+                        font-family: "Inter-Bold";
+                        border-radius: 2vw;
+                        padding: 2vw;
+                        font-weight: 700;
+                        width: 95%;
+                        margin: 0auto;
+                        margin-top: 10vw;
+                        margin-bottom: 8vw;
+                    }
                 }
 
                 .TokenSalesAPIReferralCopy{
@@ -283,6 +575,18 @@
                     font-weight: 700;
                     margin-top: 5%;
                     cursor: pointer;
+
+                    @include mobile{
+                        font-size: 3.2vw;
+                        line-height: 4vw;
+                        font-family: 'Inter-Bold';
+                        border-radius: 2vw;
+                        padding: 3vw 5vw;
+                        font-weight: 700;
+                        margin: 0 auto;
+                        margin-top: 1vw;
+                        margin-bottom: 3vw;
+                    }
 
                     &:hover{
                         transform: scale(1.05);
@@ -304,6 +608,13 @@
         bottom: 0px;
         background: rgba(133, 26, 52, 0.6);
 
+        @include mobile{
+            position: relative;
+            flex-wrap: wrap;
+            height: 40vw;
+            justify-content: center;
+        }
+
         .ProviderImg{
             display: flex;
             flex-direction: row;
@@ -311,6 +622,10 @@
             width: calc(100% / 7);
             height: 100%;
             position: relative;
+            @include mobile{
+                width: calc(100% / 4);
+                height: 50%;
+            }
             img{
                 display: block;
                 position: relative;
@@ -323,6 +638,7 @@
                     transform: scale(0.9);
                 }
             }
+            
 
             &:not(:last-child)::before{
                 content: "";
@@ -349,5 +665,20 @@
     }
     100%{
         transform: translate(-50%, -50%);
+    }
+}
+
+
+@include mobile{
+    @keyframes SoccerImg{
+        0%{
+            transform: translate(0%, -550%);
+        }
+        50%{
+            transform: translate(0%, -565%);
+        }
+        100%{
+            transform: translate(0%, -550%);
+        }
     }
 }

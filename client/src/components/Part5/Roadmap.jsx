@@ -75,7 +75,7 @@ const Roadmap = () => {
                     if(i === 1){
                         setTimeout(()=>{
                             document.querySelector(".phase2").querySelector(".Phase").classList.add("ShowPhase");
-                        }, i * 200)
+                        }, i * 400)
                     }
                     if(i === 15){
                         setTimeout(()=>{
@@ -86,6 +86,11 @@ const Roadmap = () => {
                         setTimeout(()=>{
                             document.querySelector(".phase4").querySelector(".Phase").classList.add("ShowPhase");
                         }, i * 200)
+                    }
+                    if(window.innerWidth < 1000 && i < 5 && i > 0){
+                        setTimeout(function(i){
+                            document.querySelector(`.phase${CSS.escape(i)}`).querySelector(".Phase").classList.add("ShowPhase");
+                        }.bind(null, i), i * 600)
                     }
                     i++;
                 })
@@ -131,6 +136,15 @@ const Roadmap = () => {
             <div className='Dashed23_15'><div className='Dashed'></div></div>
             <div className='Dashed34'>
                 <div className='Dashed'></div>
+            </div>
+            <div className='MobileDashed12'>
+                <div className='MobileDashed'></div>
+            </div>
+            <div className='MobileDashed23'>
+                <div className='MobileDashed'></div>
+            </div>
+            <div className='MobileDashed34'>
+                <div className='MobileDashed'></div>
             </div>
         </div>
     </div>

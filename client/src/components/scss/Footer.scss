@@ -1,3 +1,8 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .Footer{
     position: relative;
     display: flex;
@@ -12,9 +17,27 @@
     white-space: nowrap;
     z-index: 100;
 
+    @include mobile{
+        justify-content: flex-start;
+    }
+
     .FooterLeft{
         display: flex;
         flex-direction: row;
+
+        @include mobile{
+            padding: 3vw;
+            padding-top: 5vw;
+            padding-bottom: 5vw;
+        }
+        img{
+            width: 18.4vw;
+            @include mobile{
+                width: 30vw;
+            }
+        }
+
+        
 
         .FooterOption{
             position: relative;
@@ -26,6 +49,10 @@
             font-size: 1.2vw;
             font-weight: 100;
             margin-left: 4vw;
+
+            @include mobile{
+                display: none;
+            }
         
             div{
                 margin-left: 1.5vw;
@@ -39,14 +66,48 @@
         }
     }
 
+    .FooterMobile{
+        display: none;
+        @include mobile{
+            display: block;
+            position: relative;
+            font-size: 4vw;
+            color: #FFFBFF;
+            font-family: 'Inter-Bold';
+            font-weight: 900;
+            margin-left: 2vw;
+        }
+    }
+
+    .FooterMobileBall{
+        display: none;
+        @include mobile{
+            display: block;
+            position: absolute;
+            height: 13vw;
+            right: 8vw;
+        }
+    }
+
     .FooterRight{
         display: flex;
         flex-direction: row;
         margin-right: 2vw;
 
+        @include mobile{
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .FooterCopyright{
             font-size: 1vw;
             color: #FFFBFF;
+
+            @include mobile{
+                font-size: 3vw;
+            }
         }
     }    
 }

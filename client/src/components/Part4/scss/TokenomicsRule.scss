@@ -1,3 +1,8 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .TokenomicsRule{
     display: flex;
     flex-direction: column;
@@ -11,12 +16,20 @@
     opacity: 0;
     transition: all 1s ease-in-out;
 
+    @include mobile{
+        width: 90%;
+        height: auto;
+    }
+
     .TokenomicsRuleImage{
         display: block;
         position: relative;
         width: 40%;
         margin-top: 8%;
         filter: drop-shadow(-1px 14px 5px rgba(30, 30, 30, 0.5));
+        @include mobile{
+            margin-top: 3%;
+        }
     }
 
     .TokenomicsRuleTitle{
@@ -29,6 +42,11 @@
         text-align: center;
         color: #FFFBFF;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        @include mobile{
+            margin-top: 3%;
+            font-size: 5vw;
+            font-weight: 700;
+        }
     }
 
     .TokenomicsRuleDescription{
@@ -40,6 +58,15 @@
         font-family: 'Inter-Bold';
         text-align: center;
         color: #FFFBFF;
+
+        @include mobile{
+            width: 80%;
+            margin-top: 5%;
+            font-size: 3.2vw;
+            line-height: 5vw;
+            margin-bottom: 8%;
+            font-weight: 700;
+        }
     }
 }
 

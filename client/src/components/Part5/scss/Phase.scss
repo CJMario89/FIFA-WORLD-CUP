@@ -1,3 +1,8 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .Phase{
     display: block;
     position: relative;
@@ -9,6 +14,11 @@
     opacity: 0;
     transition: all 1s ease-in-out;
 
+    @include mobile{
+        border-radius: 2vw;
+    }
+    
+
     .PhaseTitle{
         display: block;
         position: relative;
@@ -17,6 +27,11 @@
         font-family: 'Inter-Bold';
         font-weight: 900;
         padding: 2vw 4vw;
+
+        @include mobile{
+            font-size: 5.2vw;
+            padding: 5vw 7vw;
+        }
     }
 
     .PhaseContent{
@@ -31,6 +46,15 @@
         font-family: 'Inter-Regular';
         font-weight: 400;
 
+        @include mobile{
+            font-size: 4.2vw;
+            line-height: 10vw;
+            margin-left: 18%;
+            width: 82%;
+            height: auto;
+            padding-bottom: 2vw;
+        }
+
         .phaseContentList{
             display: block;
             position: relative;
@@ -42,6 +66,12 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
                 filter: drop-shadow(-1px 6px 5px rgba(30, 30, 30, 0.5));
+
+                @include mobile{
+                    width: 8%;
+                    left: -6%;
+                    top: 45%;
+                }
             }
         }   
     }

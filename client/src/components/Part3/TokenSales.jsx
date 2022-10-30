@@ -92,6 +92,19 @@ const TokenSales = () => {
   return (
     <div className='TokenSales'>
         <div className='TokenSalesContainer'>
+            <div className='TokenSalesMobileTitle'>
+                FIFA2022<br/>
+                WORLD CUP<br/>
+                <span style={{color: '#EEC73C'}}>MINT</span> YOUR<br/>
+                FIFFA TOKEN!! 
+            </div>
+            <div className='TokenSalesMobileDescription'>
+                Win hundreds and thousands of dollars every day all day long with 24/7 lucky draw, automated and fulfilled by our smart contract. Purchase FIFFA with the minimum qualifying buy amount of $20 equivalent and get automatically enrolled to win the jackpot. Lucky draw is designed to make buying a habit.FIFFA token will be the best way to support your dream team!
+            </div>
+            <hr className='TokenSalesMobileAPIBuyHR'/>
+            <div className='TokenSalesMobileAPIBuy' onClick={()=>{document.getElementById('TokenSalesLaunched').scrollIntoView({'behavior':'smooth'})}}>
+                🔥BUY FIFFA
+            </div>
             <div className='TokenSalesDescription'>
                 <div className='TokenSalesDescriptionTitle' id='TokenSalesDescriptionTitle'>
                     FIFA WORLD CUP 2022’S<br/>
@@ -99,11 +112,11 @@ const TokenSales = () => {
                 </div>
                 <div className='TokenSalesDescriptionContent'>
                     Listing Price: 1 FIFFA = 0.0001 USD<br/>
-                    Liquidity will add on the Pancakeswap exchanges at Nov 20, 2022.<br/>
+                    Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=97`, '_blank')}}>Pancakeswap</span> exchanges at Nov 20, 2022.<br/>
                     <br/>
                     Airdrop & Pre-Sale Ends in
                 </div>
-                <div className='TokenSalesLaunched'>
+                <div className='TokenSalesLaunched' id="TokenSalesLaunched">
                     5d  ：  6h  ：  48m  ：  15s
                 </div>
                 <div className='TokenSalesAddress'>
@@ -116,7 +129,7 @@ const TokenSales = () => {
                 </div>
             </div>
             <div className='TokenSalesAPI'>
-                <div className='TokenSalesAPIDescription'>
+                <div className='TokenSalesAPIDescription' id="TokenSalesAPIDescription">
                     Buy FIFFA<br/>
                     Buy 0.01 BNB = 1,000,000 FIFA<br/>
                     Buy 1 BNB = 100,000,000 FIFA<br/>
@@ -132,6 +145,7 @@ const TokenSales = () => {
                     </span>
                 </div>
                 <div className='TokenSalesAPIReferral'>
+                    <div className='TokenSalesAPIReferralSquareMark'></div>
                     <div className='TokenSalesAPIReferralTitle'>
                         GENERATE REFERRAL LINK
                     </div>

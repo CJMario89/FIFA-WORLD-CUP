@@ -1,9 +1,19 @@
+@mixin mobile {
+    @media screen and (max-width: 1000px) {
+        @content
+    }
+}
 .Roadmap{
     display: block;
     position: relative;
     width: 100%;
     padding-top: 101%;
     background-color: #581026;
+
+    @include mobile{
+        padding-top: 10%;
+        height: auto;
+    }
 
     .RoadmapContainer{
         position: absolute;
@@ -13,6 +23,11 @@
         height: 100%;
         left: 0px;
         top: 0px;
+
+        @include mobile{
+            position: relative;
+            height: auto;
+        }
     }
 
     .RoadmapTitle{
@@ -29,6 +44,10 @@
         color: #FFFBFF;
         letter-spacing: 1px;
         text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+        @include mobile{
+            font-size: 6vw;
+        }
     }
 
     .Phases{
@@ -36,6 +55,14 @@
         position: absolute;
         width: 34.7%;
         height: auto;
+        z-index: 2;
+
+        @include mobile{
+            margin-left: 10%;
+            width: 80%;
+            position: relative;
+            margin-top: 7vw;
+        }
     }
 
     .phase1{
@@ -43,24 +70,52 @@
         position: absolute;
         left: 8vw;
         top: 17vw;
+        @include mobile{
+            margin-left: 10%;
+            width: 80%;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
     }
     .phase2{
         display: block;
         position: absolute;
         left: 51vw;
         top: 17vw;
+        @include mobile{
+            margin-left: 10%;
+            width: 80%;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
     }
     .phase3{
         display: block;
         position: absolute;
         left: 17vw;
         top: 66vw;
+        @include mobile{
+            margin-left: 10%;
+            width: 80%;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
     }
     .phase4{
         display: block;
         position: absolute;
         left: 60vw;
         top: 66vw;
+        @include mobile{
+            margin-left: 10%;
+            width: 80%;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
     }
 
     .Dashed{
@@ -83,6 +138,10 @@
         );
         opacity: 0;
         transition: all 1s ease-in-out;
+
+        @include mobile{
+            display: none;
+        }
         
     }
 
@@ -194,6 +253,62 @@
         top: 58.3%;
         left: 30%;
         transform: rotate(90deg);
+    }
+
+
+    .MobileDashed{
+        display: none;
+        content: '';
+        display: block;
+        position: absolute;
+        width: 15vw;
+        height: 2px;
+        background: linear-gradient(to right,transparent 0% , 
+        transparent 10%, rgba(241, 227, 230, 0.75) 10%,
+        rgba(241, 227, 230, 0.75) 20%, transparent 20%,
+        transparent 30%, rgba(241, 227, 230, 0.75) 30%,
+        rgba(241, 227, 230, 0.75) 40%, transparent 40%,
+        transparent 50%, rgba(241, 227, 230, 0.75) 50%,
+        rgba(241, 227, 230, 0.75) 60%, transparent 60%
+        );
+        transform: rotate(90deg);
+        transition: all 1s ease-in-out;
+        z-index: 1;
+
+        @include mobile{
+            display: block;
+        }
+        
+    }
+
+    .MobileDashed12{
+        display: none;
+        position: absolute;
+        top: 28.8%;
+        left: 20%;
+        @include mobile{
+            display: block;
+        }
+    }
+
+    .MobileDashed23{
+        display: none;
+        position: absolute;
+        top: 54.5%;
+        left: 70%;
+        @include mobile{
+            display: block;
+        }
+    }
+
+    .MobileDashed34{
+        display: none;
+        position: absolute;
+        top: 77.9%;
+        left: 30%;
+        @include mobile{
+            display: block;
+        }
     }
 }
 

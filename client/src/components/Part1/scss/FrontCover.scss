@@ -1,9 +1,13 @@
+@mixin mobile{
+    @media(max-width: 1000px){
+        @content;
+    }
+}
 .FrontCover{
     position: relative;
     display: block;
     height: auto;
     width: 100%;
-    margin-top: 7.2vw;
     padding-top: 69%;
     background-color: #581026;
     
@@ -50,6 +54,10 @@
         font-weight: 900;
         font-family: "Inter-Bold";
         backdrop-filter: blur(1px);
+
+        @include mobile{
+            display: none;
+        }
     }
 
     .FrontCoverTitleAnimation{
@@ -65,6 +73,10 @@
         border-radius: 1vw;
         padding: 1.8vw 0.8vw;
         cursor: pointer;
+
+        @include mobile{
+            display: none;
+        }
 
         &:hover{
             transform: scale(0.95);

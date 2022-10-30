@@ -1,6 +1,6 @@
 import './scss/WalletConnector.scss';
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Web3 from 'web3';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
@@ -9,7 +9,7 @@ import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 import MetamaskSVG from '../../assets/images/metamask.svg'
 import CoinbaseSVG from '../../assets/images/coinbase.svg'
 import WalletConnectSVG from '../../assets/images/walletconnect.svg'
-import { setupWallet } from '../../features/WalletSlice';
+import { selectWalletStatus, setupWallet } from '../../features/WalletSlice';
 import { alertMsg } from '../../features/MessageSlice';
 
 
@@ -23,6 +23,8 @@ const WalletConnector = (prop) => {
     const selectedChain = useRef('bsc_testnet');
     const walletHintImg = useRef(null);
     const [walletBlockClassName, setWalletBlockClassName] = useState('walletBlock')
+
+    const walletStatus = useSelector(selectWalletStatus)
 
     const dispatch = useDispatch();
 
@@ -45,9 +47,7 @@ const WalletConnector = (prop) => {
     //console.log(mobile)
     //console.log(window.innerWidth)
 
-    if(mobile){
-        mobileConnect();
-    }
+    
 
     const connectMetamask = async()=>{
 
@@ -152,6 +152,9 @@ const WalletConnector = (prop) => {
         }
     }
 
+    if(mobile && walletStatus === 'unconnected'){
+        mobileConnect();
+    }
 
     const walletListener = async (web3, provider,  providerName, account, chain_id)=>{
         provider.on("accountsChanged", async function(accounts){
@@ -181,7 +184,7 @@ const WalletConnector = (prop) => {
             balance: balance
         }))
 
-        
+        console.log(window.provider)
         onWalletBackgroundClick();
         if(autoConnect !== null){
             if(autoConnect.account !== "null"){
