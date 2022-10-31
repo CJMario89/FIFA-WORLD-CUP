@@ -230,6 +230,7 @@
                     font-family: "Inter-Bold";
                     font-weight: 700;
                     margin-top: 5%;
+                    white-space: nowrap;
                     cursor: pointer;
                     z-index: 1;
 
@@ -243,8 +244,10 @@
                         padding: 3vw 4vw;
                         font-size: 3.4vw;
                         top: 7vw;
-                        left: 11vw;
+                        left: 50%;
+                        transform: translateX(-50%);
                         border-radius: 2vw;
+
                     }
                 }
             }

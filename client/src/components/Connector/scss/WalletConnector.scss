@@ -159,6 +159,9 @@
     background-color: black;
     opacity: 0.5;
     z-index: 50;
+    @include mobile{
+        display: none;
+    }
 }
 
 @media screen and (max-width:821px){
