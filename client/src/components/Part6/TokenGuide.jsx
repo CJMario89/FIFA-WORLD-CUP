@@ -20,7 +20,7 @@ const TokenGuide = () => {
         {
             'image': require(`../../assets/images/part6/guide3.png`),
             'title': 'Head on to PancakeSwap and swap for FIFA',
-            'description': <div><span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=97`, "_blank")}}>Click here</span> to head on over to PancakeSwap or use this address (Address Will Be Updated Here After Swap Ends) to select FIFFA token. Set the slippage tolerance to 5% (sometimes it may be a bit more, depending on how much demand there is)</div>
+            'description': <div><span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`, "_blank")}}>Click here</span> to head on over to PancakeSwap or use this address (Address Will Be Updated Here After Swap Ends) to select FIFFA token. Set the slippage tolerance to 5% (sometimes it may be a bit more, depending on how much demand there is)</div>
         },
         {
             'image': require(`../../assets/images/part6/guide4.png`),

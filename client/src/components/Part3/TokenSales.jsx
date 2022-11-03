@@ -114,7 +114,7 @@ const TokenSales = () => {
                 </div>
                 <div className='TokenSalesDescriptionContent'>
                     Listing Price: 1 FIFFA = 0.0001 USD<br/>
-                    Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=97`, '_blank')}}>Pancakeswap</span> exchanges at Nov 20, 2022.<br/>
+                    Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`, '_blank')}}>Pancakeswap</span> exchanges at Nov 20, 2022.<br/>
                     <br/>
                     Airdrop & Pre-Sale Ends in
                 </div>
@@ -162,7 +162,7 @@ const TokenSales = () => {
             <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://www.hotbit.io/exchange?symbol=BNB_FIFFA", "_blank")}}>
                 <img src={require(`../../assets/images/part2/part2_1.png`)} alt=''></img>
             </div>
-            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=97`,"_blank")}}>
+            <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`,"_blank")}}>
                 <img src={require(`../../assets/images/part2/part2_2.png`)} alt='' style={{width: '57%'}}></img>
             </div>
             <div className='ProviderImg' key={uuidv4()} onClick={()=>{window.open("https://www.coinbase.com/price/bnb", "_blank")}}>
