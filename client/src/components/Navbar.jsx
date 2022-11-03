@@ -68,7 +68,7 @@ const Navbar = (prop) => {
         })
     }, [])
 
-    console.log(walletBlockShowingFlag)
+    // console.log(walletBlockShowingFlag)
   return (
     <>
         <div className='Navbar'>

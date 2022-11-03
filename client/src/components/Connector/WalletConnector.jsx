@@ -68,7 +68,7 @@ const WalletConnector = (prop) => {
             if(chain_id !== 56 && chain_id !== 97){
                 await provider.request({
                     method: 'wallet_switchEthereumChain',
-                    params: [{ chainId: web3.utils.toHex(97) }]
+                    params: [{ chainId: web3.utils.toHex(56) }]
                 });
             }
             chain_id = await web3.eth.getChainId();
@@ -184,7 +184,7 @@ const WalletConnector = (prop) => {
             balance: balance
         }))
 
-        console.log(window.provider)
+        // console.log(window.provider)
         onWalletBackgroundClick();
         if(autoConnect !== null){
             if(autoConnect.account !== "null"){

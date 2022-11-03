@@ -6,8 +6,9 @@ import FIFA from '../../assets/images/part2/FIFA.png'
 import { v4 as uuidv4 } from 'uuid'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectWallet, selectWalletStatus } from '../../features/WalletSlice'
-import { freemint, mint } from '../../features/ContractInteraction'
+import { freemint, mint} from '../../features/ContractInteraction'
 import { alertMsg } from '../../features/MessageSlice'
+import RemainTime from './RemainTime'
 
 const TokenSales = () => {
     const walletStatus = useSelector(selectWalletStatus);
@@ -15,7 +16,6 @@ const TokenSales = () => {
     const TokenSalesAPIInput = useRef(null);
     const TokenSalesAPIReferralURL = useRef(null);
     const dispatch = useDispatch();
-
 
 
     const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -87,7 +87,8 @@ const TokenSales = () => {
         dispatch(alertMsg("Copied"))
     }
 
-    window.contractAddress = '0x554E312954749f5F54a912F7d9E76c89aAba2389';
+
+    window.contractAddress = '0xA3dfd08f112492260fB97aCCE7a3F6269d2Ef01B';
 
   return (
     <div className='TokenSales'>
@@ -118,7 +119,7 @@ const TokenSales = () => {
                     Airdrop & Pre-Sale Ends in
                 </div>
                 <div className='TokenSalesLaunched' id="TokenSalesLaunched">
-                    5d  ：  6h  ：  48m  ：  15s
+                    <RemainTime/>
                 </div>
                 <div className='TokenSalesAddress'>
                     { window.contractAddress }
