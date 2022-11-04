@@ -91,12 +91,12 @@ const Navbar = (prop) => {
             </div>
 
             <div className='NavbarRight'>
-                <div className='NavbarTelegram'>
+                <div className='NavbarTelegram' style={{'display':'none'}}>
                     Telegram 🎉
                 </div>
                 {!walletConnected ? 
                     <div className=' NavbarConnectWallet' onClick={()=>{setWalletBlockShowingFlag(prev=>!prev)}}>
-                        CONNECT WALLET  🚀
+                        CONNECT WALLET
                     </div>
                     :
                     <>

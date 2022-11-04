@@ -35,7 +35,7 @@ export const walletSlice = createSlice({
             localStorage.setItem('wallet_address', null)
             state.status = 'unconnected';
             delete window.provider;
-            delete window.web3;
+            delete window.Web3;
         }
     },
 })

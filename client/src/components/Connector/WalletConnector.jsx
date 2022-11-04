@@ -160,8 +160,8 @@ const WalletConnector = (prop) => {
         provider.on("accountsChanged", async function(accounts){
             account = accounts[0];
             // console.log(account)
-            const chain_id = await window.web3.eth.getChainId();
-            const balanceWei = await window.web3.eth.getBalance(account);
+            const chain_id = await window.Web3.eth.getChainId();
+            const balanceWei = await window.Web3.eth.getBalance(account);
             const balance = await web3.utils.fromWei(balanceWei, "ether");
             localStorage.setItem('wallet_address', account);
             dispatch(setupWallet({
@@ -171,9 +171,9 @@ const WalletConnector = (prop) => {
                 balance: balance
             }))
         });
-        window.web3 = web3;
+        window.Web3 = web3;
         window.provider = provider;
-        const balanceWei = await window.web3.eth.getBalance(account);
+        const balanceWei = await window.Web3.eth.getBalance(account);
         const balance = await web3.utils.fromWei(balanceWei, "ether");
         localStorage.setItem('providerName', providerName);
         localStorage.setItem('wallet_address', account);

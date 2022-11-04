@@ -9,6 +9,7 @@ import { selectWallet, selectWalletStatus } from '../../features/WalletSlice'
 import { freemint, mint} from '../../features/ContractInteraction'
 import { alertMsg } from '../../features/MessageSlice'
 import RemainTime from './RemainTime'
+import TokenRemain from './TokenRemain'
 
 const TokenSales = () => {
     const walletStatus = useSelector(selectWalletStatus);
@@ -88,7 +89,7 @@ const TokenSales = () => {
     }
 
 
-    window.contractAddress = '0xA3dfd08f112492260fB97aCCE7a3F6269d2Ef01B';
+    window.contractAddress = '0x5f08f948cdF51da6511EBA39a5e417951910b5b0';
 
   return (
     <div className='TokenSales'>
@@ -113,7 +114,7 @@ const TokenSales = () => {
                     <span style={{color: '#EEC73C'}}>TOKEN SALE</span>
                 </div>
                 <div className='TokenSalesDescriptionContent'>
-                    Listing Price: 1 FIFFA = 0.0001 USD<br/>
+                    {/* Listing Price: 1 FIFFA = 0.0001 USD<br/> */}
                     Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`, '_blank')}}>Pancakeswap</span> exchanges at Nov 20, 2022.<br/>
                     <br/>
                     Airdrop & Pre-Sale Ends in
@@ -140,6 +141,9 @@ const TokenSales = () => {
                 <input className='TokenSalesAPIInput' ref={TokenSalesAPIInput} defaultValue="0.5"></input>
                 <div className='TokenSalesAPIBuy' onClick={()=>{onMint()}}>
                     🔥BUY FIFFA
+                </div>
+                <div className='TokenSalesRemain'>
+                    <TokenRemain/>
                 </div>
                 <div className='TokenSalesAPIFreemint' onClick={()=>{onFreemint()}}>
                     <span>

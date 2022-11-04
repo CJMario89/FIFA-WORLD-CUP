@@ -329,6 +329,27 @@
                 }
             }
 
+            .TokenSalesRemain{
+                position: relative;
+                display: block;
+                width: max-content;
+                margin-top: 5%;
+                font-size: 1.6vw;
+                text-align: center;
+                line-height: 2vw;
+                font-family: 'Inter-Bold';
+                font-weight: 500;
+                color: #F1E3E6;
+
+                @include mobile{
+                    font-size: 3.2vw;
+                    line-height: 5vw;
+                    font-family: 'Inter-Bold';
+                    font-weight: 700;
+                    margin-top: 5%;
+                }
+            }
+
             .TokenSalesAPIInput{
                 display: block;
                 position: relative;
@@ -384,7 +405,7 @@
             .TokenSalesAPIFreemint{
                 display: block;
                 position: relative;
-                margin-top: 8%;
+                margin-top: 6%;
                 font-size: 1.6vw;
                 font-family: "Inter-Bold";
                 font-weight: 500;
@@ -429,7 +450,7 @@
                 width: 100%;
                 height: fill-available;
                 height: -webkit-fill-available;
-                margin-top: 10%;
+                margin-top: 4%;
                 font-size: 1.6vw;
                 font-family: "Inter-Bold";
                 font-weight: 900;

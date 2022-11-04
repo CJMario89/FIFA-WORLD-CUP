@@ -23,8 +23,8 @@ const Rules = [
         'image': require(`../../assets/images/part3/Rule3.png`)
     },
     {
-        'title': '10,000,000,000 TOTAL SUPPLY',
-        'description': 'FIFFA has a 10B total supply.',
+        'title': '1,000,000,000 TOTAL SUPPLY',
+        'description': 'FIFFA has a 1B total supply.',
         'image': require(`../../assets/images/part3/Rule4.png`)
     },
     {

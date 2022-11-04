@@ -3,14 +3,14 @@
 const createContract = async()=>{
     const abi = await fetch('/FIFFA_abi.json');
     const abiJson = await abi.json();
-    const contract = new window.web3.eth.Contract(abiJson, window.contractAddress)
+    const contract = new window.Web3.eth.Contract(abiJson, window.contractAddress)
     return contract;
 }
 
 const freemintValue = async()=>{
     const aggregatorV3InterfaceABI = [{ "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "description", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint80", "name": "_roundId", "type": "uint80" }], "name": "getRoundData", "outputs": [{ "internalType": "uint80", "name": "roundId", "type": "uint80" }, { "internalType": "int256", "name": "answer", "type": "int256" }, { "internalType": "uint256", "name": "startedAt", "type": "uint256" }, { "internalType": "uint256", "name": "updatedAt", "type": "uint256" }, { "internalType": "uint80", "name": "answeredInRound", "type": "uint80" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "latestRoundData", "outputs": [{ "internalType": "uint80", "name": "roundId", "type": "uint80" }, { "internalType": "int256", "name": "answer", "type": "int256" }, { "internalType": "uint256", "name": "startedAt", "type": "uint256" }, { "internalType": "uint256", "name": "updatedAt", "type": "uint256" }, { "internalType": "uint80", "name": "answeredInRound", "type": "uint80" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "version", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]
     const addr = "0x87Ea38c9F24264Ec1Fff41B04ec94a97Caf99941"
-    const priceFeed = new window.web3.eth.Contract(aggregatorV3InterfaceABI, addr)
+    const priceFeed = new window.Web3.eth.Contract(aggregatorV3InterfaceABI, addr)
 
     return await priceFeed.methods.latestRoundData().call()
         .then((roundData) => {
@@ -35,12 +35,12 @@ export const mint = async(account, value, referral)=>{
         try{
             await window.provider.request({
                 method: 'wallet_switchEthereumChain',
-                params: [{ chainId: window.web3.utils.toHex(56) }]
+                params: [{ chainId: window.Web3.utils.toHex(56) }]
             });
         }catch(err){
             throw err;
         }
-        const wei = window.web3.utils.toWei(value, 'ether');
+        const wei = window.Web3.utils.toWei(value, 'ether');
         const contract = await createContract();
         const estimateGasMint = await contract.methods.mint(referral).estimateGas({from: account, to: contract._address, value: wei});
         const resultMint = await contract.methods.mint(referral).send({gas: estimateGasMint, from: account, to: contract._address, value: wei});
@@ -73,7 +73,7 @@ export const freemint = async(account, referral)=>{
         try{
             await window.provider.request({
                 method: 'wallet_switchEthereumChain',
-                params: [{ chainId: window.web3.utils.toHex(56) }]
+                params: [{ chainId: window.Web3.utils.toHex(56) }]
             });
         }catch(err){
             throw err;
@@ -108,4 +108,11 @@ export const returnStopMintTime = async()=>{
     const contract = await createContract();
     const time = await contract.methods.returnStopMintTime().call();
     return time;
+}
+
+export const returnRemainSupply = async()=>{
+    const contract = await createContract();
+    const weiRemainSupply = await contract.methods.returnRemainSupply().call();
+    const etherRemainSupply = await window.Web3.utils.fromWei(weiRemainSupply, 'ether');
+    return etherRemainSupply;
 }
