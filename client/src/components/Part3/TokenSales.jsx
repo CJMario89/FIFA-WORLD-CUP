@@ -115,7 +115,7 @@ const TokenSales = () => {
                 </div>
                 <div className='TokenSalesDescriptionContent'>
                     {/* Listing Price: 1 FIFFA = 0.0001 USD<br/> */}
-                    Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`, '_blank')}}>Pancakeswap</span> exchanges at Nov 20, 2022.<br/>
+                    Liquidity will add on the <span className='link' onClick={()=>{window.open(`https://pancakeswap.finance/swap?outputCurrency=${window.contractAddress}&chainId=56`, '_blank')}}>Pancakeswap</span> exchanges at Dec 19, 2022.<br/>
                     <br/>
                     Airdrop & Pre-Sale Ends in
                 </div>
