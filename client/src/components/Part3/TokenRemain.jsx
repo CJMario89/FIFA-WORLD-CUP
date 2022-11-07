@@ -11,13 +11,9 @@ const TokenRemain = () => {
         setTokenRemain(parseInt(token).toLocaleString());
     }
     useEffect(()=>{
-        if(typeof window.Web3 !== 'undefined'){
-            ShowRemainToken();
-        }
+        ShowRemainToken();
         const tokenRemainInterval = setInterval(async()=>{
-            if(typeof window.Web3 !== 'undefined'){
-                ShowRemainToken();
-            }
+            ShowRemainToken();
         }, 1000)
         return(()=>{
             clearInterval(tokenRemainInterval);

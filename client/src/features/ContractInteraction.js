@@ -1,10 +1,18 @@
-
+import Web3 from "web3";
 
 const createContract = async()=>{
     const abi = await fetch('/FIFFA_abi.json');
     const abiJson = await abi.json();
     const contract = new window.Web3.eth.Contract(abiJson, window.contractAddress)
     return contract;
+}
+
+const createInfoContract = async()=>{
+    const infoWeb3 = new Web3(new Web3.providers.HttpProvider('https://hardworking-divine-ensemble.bsc.discover.quiknode.pro/43958efedb5ffdfbb03ed542992a33da7b09a51f/'));
+    const abi = await fetch('/FIFFA_abi.json');
+    const abiJson = await abi.json();
+    const contract = new infoWeb3.eth.Contract(abiJson, window.contractAddress)
+    return {contract, infoWeb3};
 }
 
 const freemintValue = async()=>{
@@ -105,14 +113,14 @@ export const freemint = async(account, referral)=>{
 }
 
 export const returnStopMintTime = async()=>{
-    const contract = await createContract();
+    const {contract} = await createInfoContract();
     const time = await contract.methods.returnStopMintTime().call();
     return time;
 }
 
 export const returnRemainSupply = async()=>{
-    const contract = await createContract();
+    const {contract, infoWeb3} = await createInfoContract();
     const weiRemainSupply = await contract.methods.returnRemainSupply().call();
-    const etherRemainSupply = await window.Web3.utils.fromWei(weiRemainSupply, 'ether');
+    const etherRemainSupply = infoWeb3.utils.fromWei(weiRemainSupply, 'ether');
     return etherRemainSupply;
 }
